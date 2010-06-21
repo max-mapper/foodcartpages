@@ -11,7 +11,7 @@
 
     <div id="profile"></div>
     <div id="item">
-      <form>
+      <form id="itemform">
         <fieldset>
           <legend>Basics</legend>
           Name: <input type="text" id="name"/> <br/>
@@ -32,10 +32,23 @@
       $("#account").evently("account", app);
       $("#profile").evently("profile", app);
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+      var uDoc;
       app.db.openDoc(jQuery.url.param("id"), { success : function(userDoc) { 
+                                                           uDoc = userDoc;
                                                            $('#name').val(userDoc.name);
                                                            $('#description').val(userDoc.description);
                                               }});
+      $('#itemform').submit(function(event) {
+                             uDoc.name = $('#name').val();
+                             uDoc.description = $('#description').val();
+                             app.db.saveDoc(uDoc, {
+                                    success : function() {
+                                      alert("saved!");
+                                      window.location = "index.html";
+                                    }
+                            });
+                            return false;
+                    });
     });
   </script>
 </html>
