@@ -7,10 +7,11 @@
   <body>
     <div id="account"></div>
 
-    <h1>Edit a Foodcart</h1>
+    <h1>Foodcart Pages</h1>
 
     <div id="profile"></div>
-    <div id="item">
+    <div id="items">
+      <h3>Edit a Foodcart</h3>
       <form id="itemform">
         <fieldset>
           <legend>Basics</legend>
@@ -43,8 +44,7 @@
                              uDoc.description = $('#description').val();
                              app.db.saveDoc(uDoc, {
                                     success : function() {
-                                      alert("saved!");
-                                      window.location = "index.html";
+                                      window.location = "show.html?id="+uDoc._id;
                                     }
                             });
                             return false;
