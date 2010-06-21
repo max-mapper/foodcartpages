@@ -1,0 +1,14 @@
+<h3>Food Carts</h3>
+<ul>
+  {{#items}}
+    <li>
+      <p style="float:right">
+        <a href="edit.html?id={{_id}}">edit</a>
+      </p>
+      <h2>
+        {{name}}
+      </h2>
+      <p>{{{description}}}</p>
+    </li>
+  {{/items}}
+</ul>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Edit</title>
+    <link rel="stylesheet" href="style/main.css" type="text/css">
+  </head>
+  <body>
+    <div id="account"></div>
+
+    <h1>Edit a Foodcart</h1>
+
+    <div id="profile"></div>
+    <div id="item"></div>
+
+    <div id="sidebar">
+      <p>Find information about foodcarts.</p>
+      <p>Ideas: You could easily turn this into a photo sharing app, or a grocery list, or a chat room.</p>
+    </div>
+  </body>
+  <script src="vendor/couchapp/loader.js"></script>
+  <script type="text/javascript" charset="utf-8">
+    $.couch.app(function(app) {
+      $("#account").evently("account", app);
+      $("#profile").evently("profile", app);
+      $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
+      app.db.view('cart')
+      app.db.loadDoc('abc')
+    });
+  </script>
+</html>
