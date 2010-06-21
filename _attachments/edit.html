@@ -10,7 +10,16 @@
     <h1>Edit a Foodcart</h1>
 
     <div id="profile"></div>
-    <div id="item"></div>
+    <div id="item">
+      <form>
+        <fieldset>
+          <legend>Basics</legend>
+          Name: <input type="text" id="name"/> <br/>
+          Description: <textarea id="description" cols="40" rows="8"></textarea>
+        </fieldset>
+        <input type="submit" />
+      </form>
+    </div>
 
     <div id="sidebar">
       <p>Find information about foodcarts.</p>
@@ -23,7 +32,10 @@
       $("#account").evently("account", app);
       $("#profile").evently("profile", app);
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
-      app.db.openDoc(jQuery.url.param("id"));
+      app.db.openDoc(jQuery.url.param("id"), { success : function(userDoc) { 
+                                                           $('#name').val(userDoc.name);
+                                                           $('#description').val(userDoc.description);
+                                              }});
     });
   </script>
 </html>
