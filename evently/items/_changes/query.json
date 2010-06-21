@@ -1,4 +1,3 @@
 {
-  "view" : "recent-items",
-  "limit" : 50
+  "view" : "recent-items"
 }
