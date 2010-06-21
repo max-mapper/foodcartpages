@@ -23,8 +23,7 @@
       $("#account").evently("account", app);
       $("#profile").evently("profile", app);
       $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
-      app.db.view('cart')
-      app.db.loadDoc('abc')
+      app.db.openDoc(jQuery.url.param("id"));
     });
   </script>
 </html>
