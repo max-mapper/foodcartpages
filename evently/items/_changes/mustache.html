@@ -2,11 +2,8 @@
 <ul>
   {{#items}}
     <li>
-      <p style="float:right">
-        <a href="edit.html?id={{_id}}">edit</a>
-      </p>
       <h2>
-        {{name}}
+        <a href="show.html?id={{_id}}">{{name}}</a>
       </h2>
       <p>{{{description}}}</p>
     </li>
