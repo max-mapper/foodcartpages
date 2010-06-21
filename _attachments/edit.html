@@ -16,7 +16,8 @@
         <fieldset>
           <legend>Basics</legend>
           Name: <input type="text" id="name"/> <br/>
-          Description: <textarea id="description" cols="40" rows="8"></textarea>
+          Description: <textarea id="description" cols="50" rows="3"></textarea> <br/>
+          Hours: <input type="text" id="hours"/> <br/>
         </fieldset>
         <input type="submit" />
       </form>
@@ -38,10 +39,12 @@
                                                            uDoc = userDoc;
                                                            $('#name').val(userDoc.name);
                                                            $('#description').val(userDoc.description);
+                                                           $('#hours').val(userDoc.hours);
                                               }});
       $('#itemform').submit(function(event) {
                              uDoc.name = $('#name').val();
                              uDoc.description = $('#description').val();
+                             uDoc.hours = $('#hours').val();
                              app.db.saveDoc(uDoc, {
                                     success : function() {
                                       window.location = "show.html?id="+uDoc._id;

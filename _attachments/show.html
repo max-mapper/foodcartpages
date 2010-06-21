@@ -12,9 +12,12 @@
     <div id="profile"></div>
     <div id="items">
        <h3>Foodcart Detail</h3>
-          <h3 id="name"></h3>
-          <p id="description"></p>
-        <a id="editlink" >edit</a>
+       <h3 id="name"></h3>
+       <p>
+        Hours: <span id="hours"></span>
+       </p>
+       <p id="description"></p>
+       <a id="editlink" >edit</a>
     </div>
 
     <div id="sidebar">
@@ -33,6 +36,7 @@
                                                            uDoc = userDoc;
                                                            $('#name').html(userDoc.name);
                                                            $('#description').html(userDoc.description);
+                                                           $('#hours').html(userDoc.hours);
                                                            $('#editlink').attr("href","edit.html?id="+userDoc._id);
                                               }});
     });
