@@ -16,7 +16,9 @@
        <p>
         Hours: <span id="hours"></span>
        </p>
-       <p id="description"></p>
+       <p>
+       Description: <span id="description"></p>
+       </p>
        <a id="editlink" >edit</a>
     </div>
 
@@ -28,9 +30,6 @@
   <script src="vendor/couchapp/loader.js"></script>
   <script type="text/javascript" charset="utf-8">
     $.couch.app(function(app) {
-      $("#account").evently("account", app);
-      $("#profile").evently("profile", app);
-      $.evently.connect("#account","#profile", ["loggedIn","loggedOut"]);
       var uDoc;
       app.db.openDoc(jQuery.url.param("id"), { success : function(userDoc) { 
                                                            uDoc = userDoc;
