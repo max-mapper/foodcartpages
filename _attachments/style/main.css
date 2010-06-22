@@ -1,5 +1,9 @@
 /* add styles here */
 
+html {
+  width: 100%;
+}
+
 body {
   font:1em Helvetica, sans-serif;
   padding:4px;
@@ -38,8 +42,10 @@ h1 {
 #items li {
   border:4px solid #f5f5ff;
   background:#fff;
-  padding:8px;
+  padding:0px 8px 8px 8px;
   margin:4px 0;
+  overflow: auto;  
+  min-height: 160px;
 }
 
 form {
@@ -72,4 +78,19 @@ div.avatar img {
 
 #items ul {
   list-style: none;
+}
+
+.item {
+  position:relative;
+}
+
+.item_info {
+  margin-right:250px;
+}
+
+.item_map {
+  position:absolute;
+  width:250px;
+  right:0;
+  top:0;
 }
