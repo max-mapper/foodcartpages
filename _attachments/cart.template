@@ -1,0 +1,18 @@
+<li>
+  <div id="cart_whiffies" class="cart rounded">
+    <div class="map right">
+      <img class='map_image' src='http://maps.google.com/maps/api/staticmap?center=<%= cart.value.geometry.coordinates[1] %>,<%= cart.value.geometry.coordinates[0] %>&zoom=14&size=250x130&markers=color:blue|<%= cart.value.geometry.coordinates[1] %>,<%= cart.value.geometry.coordinates[0] %>&sensor=false'>
+    </div>
+
+    <div class="left">
+      <img src='images/whiffies.jpg'>
+    </div>
+
+    <h2> <a ><%= cart.value.name %></a> </h2>
+    <ul>
+      <li>Hours: <%= cart.value.hours %></li>
+      <li>Description: <%= cart.value.description %></li>
+    </ul>
+  </div>
+  <br clear="all">
+</li>
