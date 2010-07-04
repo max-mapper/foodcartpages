@@ -60,10 +60,17 @@
 .cart {
   background: white;
   margin: 5px;
+  height: 170px;
 }
 
-.cart img {
+.cart .profile img {
   margin: 5px;
+  height: 160px;
+}
+
+#map_image {
+  margin: 5px;
+  height: 130px;
 }
 #content {
   padding-top: 5px;

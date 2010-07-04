@@ -28,8 +28,10 @@
             app.db.view('webapp/cart', {success: function(cart_results) {
                                           $('#cartcount').html(cart_results.total_rows);
                                           $.each(cart_results.rows, function(index,element) {
-                                            //context.partial('cart.template', {cart: element}, function(rendered) {
-                                            //   $('#carts ul').append(rendered);});
+                                            var carts_element = $('#carts ul');
+                                            context.partial('cart.template', {cart: element}, function(rendered) {
+                                               carts_element.append(rendered);
+                                            });
                                           });
                                        }});
           });
