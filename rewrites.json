@@ -1,6 +1,10 @@
 [
-    {
-      "from": "/",
-      "to": "_design/webapp/index.html"
-    }
+  {
+    "from": "",
+    "to": "_design/webapp/index.html"
+  },
+  {
+    "from": "/*",
+    "to": "../../../*"
+  }
 ]
