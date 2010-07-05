@@ -1,7 +1,7 @@
 [
   {
     "from": "",
-    "to": "_design/webapp/index.html"
+    "to": "index.html"
   },
   {
     "from": "/*",
