@@ -4,6 +4,30 @@
     "to": "index.html"
   },
   {
+    "from": "*.template",
+    "to": "*.template"
+  },
+  {
+    "from": "favicon.ico",
+    "to": "favicon.ico"
+  },
+  {
+    "from": "style/*",
+    "to": "style/*"
+  },
+  {
+    "from": "images/*",
+    "to": "images/*"
+  },
+  {
+    "from": "js/*",
+    "to": "js/*"
+  },
+  {
+    "from": "vendor/*",
+    "to": "vendor/*"
+  },
+  {
     "from": "/*",
     "to": "../../../*"
   }
