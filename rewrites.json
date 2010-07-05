@@ -4,8 +4,16 @@
     "to": "index.html"
   },
   {
-    "from": "*.template",
-    "to": "*.template"
+    "from": "/cart.template",
+    "to": "cart.template"
+  },
+  {
+    "from": "/carts.template",
+    "to": "carts.template"
+  },
+  {
+    "from": "/cartmap.template",
+    "to": "cartmap.template"
   },
   {
     "from": "favicon.ico",
