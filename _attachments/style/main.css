@@ -28,9 +28,11 @@
   height: 116px;
 }
 
-#searchbox {
-  float: right;
+#headrighthalf {
   width: 45%;
+}
+
+#searchbox {
   padding: 10px;
   background: white;
 }
@@ -52,6 +54,28 @@
   padding-bottom: 10px;
   padding-left: 5px;
   padding-right: 5px;
+}
+
+#menubuttons {
+  background: white
+}
+
+#menubuttons ul {
+  list-style: none;
+}
+
+#menubuttons ul li {
+  background: #dddddd;
+  display: inline;
+  text: 120%;
+  margin: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+}
+
+#cartcount {
+  background: white;
+  text-align: center;
 }
 
 #carts ul {

@@ -1,5 +1,5 @@
-<span id="cartcount"></span> Carts
 <div id="carts" class="rounded">
+  <div id="cartcount"></div>
   <ul>
   </ul>
 </div>

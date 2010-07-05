@@ -24,9 +24,10 @@
     this.get('#/carts', function(context) {
       context.partial('carts.template', {id: 1}, function(rendered) {
           context.$element().html(rendered);
+          $('#cartcount').html('loading cart data <img src="images/spinner.gif">');
           $.couch.app(function(app) {
             app.db.view('webapp/cart', {success: function(cart_results) {
-                                          $('#cartcount').html(cart_results.total_rows);
+                                          $('#cartcount').html(cart_results.total_rows+" food carts listed.");
                                           $.each(cart_results.rows, function(index,element) {
                                             var carts_element = $('#carts ul');
                                             context.partial('cart.template', {cart: element}, function(rendered) {
@@ -34,7 +35,7 @@
                                             });
                                           });
                                        }});
-          });
+          }, {db : "food_carts", design : "webapp"});
       });
     });
 
