@@ -8,8 +8,8 @@
     "to": "cart.template"
   },
   {
-    "from": "/cart.edit.template",
-    "to": "cart.edit.template"
+    "from": "/cartedit.template",
+    "to": "cartedit.template"
   },
   {
     "from": "/carts.template",

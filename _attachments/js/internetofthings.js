@@ -51,7 +51,7 @@
       var id = this.params['id'];
       $.couch.app(function(app) {
         app.db.openDoc(id, {success: function(cart_doc) {
-          context.partial('cart.edit.template', {cart: cart_doc}, function(rendered) {
+          context.partial('cartedit.template', {cart: cart_doc}, function(rendered) {
             context.$element().html(rendered);
             var cartform = $('#cartform');
             $('#cartform').submit(function() {
