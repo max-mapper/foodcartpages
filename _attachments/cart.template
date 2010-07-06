@@ -5,7 +5,7 @@
     </div>
 
     <div class="profile left">
-      <img src='<%= cart.value.profile_image %>'>
+      <img src='/food_carts/<%= cart.id %>/menuphoto' shouldbe='<%= cart.value.profile_image %>'>
     </div>
 
     <h2> <a ><%= cart.value.name %></a> </h2>

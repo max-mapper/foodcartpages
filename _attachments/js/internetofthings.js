@@ -61,7 +61,7 @@
                                name: $('#cartform #name').val(), 
                                hours: $('#cartform #hours').val(), 
                                description: $('#cartform #description').val(), 
-                               geometry: {coordinates: [],"type":"Point"}
+                               geometry: {coordinates: [0,0],"type":"Point"}
                              }, {success: function(res) {
                                   window.location = "#/carts";
               }});
