@@ -51,9 +51,23 @@
       var id = this.params['id'];
       $.couch.app(function(app) {
         app.db.openDoc(id, {success: function(cart_doc) {
-          context.partial('carts.edit.template', {cart: cart_doc}, function(rendered) {
+          context.partial('cart.edit.template', {cart: cart_doc}, function(rendered) {
             context.$element().html(rendered);
+            var cartform = $('#cartform');
+            $('#cartform').submit(function() {
+              app.db.saveDoc({
+                               _id: cart_doc._id,
+                               _rev: cart_doc._rev,
+                               name: $('#cartform #name').val(), 
+                               hours: $('#cartform #hours').val(), 
+                               description: $('#cartform #description').val(), 
+                               geometry: {coordinates: [],"type":"Point"}
+                             }, {success: function(res) {
+                                  window.location = "#/carts";
+              }});
+              return false;
             });
+          });
         }});
       }, {db : "food_carts", design : "webapp"});
     });
