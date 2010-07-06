@@ -1,0 +1,17 @@
+<form id="cartform">
+  <fieldset>
+    <div>
+    <label for="name">Name</label>
+    <input id="name" value="<%= cart.name %>">
+    </div>
+    <div>
+    <label for="name">Hours</label>
+    <input id="hours" value="<%= cart.hours %>">
+    </div>
+    <div>
+    <label for="name">Description</label>
+    <input id="description" value="<%= cart.description %>">
+    </div>
+  </fieldset>
+  <input type="submit" value="Save">
+</form>
