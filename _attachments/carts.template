@@ -2,4 +2,7 @@
   <div id="cartcount"></div>
   <ul>
   </ul>
+  <div id="cartsmenu">
+    <a href="#/carts/new">New Cart</a>
+  </div>
 </div>

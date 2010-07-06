@@ -78,6 +78,11 @@
   text-align: center;
 }
 
+#cartsmenu {
+  background: white;
+  text-align: center;
+}
+
 #carts ul {
   list-style: none;
 }

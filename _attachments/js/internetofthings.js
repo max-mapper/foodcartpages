@@ -39,6 +39,25 @@
       });
     });
 
+    this.get('#/carts/new', function(context) {
+      $.couch.app(function(app) {
+        app.db.saveDoc({}, {success: function(res) {
+          window.location = "#/carts/edit/"+res.id;
+        }});
+      }, {db : "food_carts", design : "webapp"});
+    });
+
+    this.get('#/carts/edit/:id', function(context) {
+      var id = this.params['id'];
+      $.couch.app(function(app) {
+        app.db.openDoc(id, {success: function(cart_doc) {
+          context.partial('carts.edit.template', {cart: cart_doc}, function(rendered) {
+            context.$element().html(rendered);
+            });
+        }});
+      }, {db : "food_carts", design : "webapp"});
+    });
+
     $(function() {
       app.run('#/map');
     });
