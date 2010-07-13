@@ -29,7 +29,7 @@
             app.db.view('webapp/cart', {success: function(cart_results) {
                                           $('#cartcount').html(cart_results.total_rows+" food carts listed.");
                                           $.each(cart_results.rows, function(index,element) {
-                                            var carts_element = $('#carts ul');
+                                            var carts_element = $('#carts ul#carts');
                                             context.partial('cart.template', {cart: element}, function(rendered) {
                                                carts_element.append(rendered);
                                             });
@@ -42,6 +42,10 @@
     this.get('#/carts/new', function(context) {
       $.couch.app(function(app) {
         app.db.saveDoc({}, {success: function(res) {
+          var carts_element = $('#carts ul#carts');
+          context.partial('cart.template', {cart: {id: res.id, rev: res.rev, value: {geometry:{coordinates:[0,0]}}}}, function(rendered) {
+             carts_element.append(rendered);
+          });
           window.location = "#/carts/edit/"+res.id;
         }});
       }, {db : "food_carts", design : "webapp"});
