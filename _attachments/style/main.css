@@ -65,13 +65,21 @@
 }
 
 #menubuttons ul li {
-  background: #dddddd;
   display: inline;
-  text: 120%;
-  margin: 5px;
+  font-size: 140%;
+  margin: 8px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
 }
+
+#menubuttons ul li a {
+  color: green;
+}
+
+#menubuttons ul li a:hover {
+  background: #dddddd;
+}
+
 
 #cartcount {
   background: white;
