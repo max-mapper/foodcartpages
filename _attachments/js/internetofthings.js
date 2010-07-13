@@ -78,7 +78,7 @@
     });
 
     $(function() {
-      app.run('#/map');
+      app.run('#/carts');
     });
   });
 })(jQuery);
