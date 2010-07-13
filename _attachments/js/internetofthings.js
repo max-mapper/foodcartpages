@@ -72,6 +72,11 @@
       }, {db : "food_carts", design : "webapp"});
     });
 
+    this.get('#/credits', function(context) {
+      context.partial('credits.template', function(rendered) {
+        context.$element().html(rendered)});
+    });
+
     $(function() {
       app.run('#/map');
     });
