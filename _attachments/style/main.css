@@ -139,6 +139,10 @@
   float: left;
 }
 
+.centered {
+  text-align: center;
+}
+
 img {
   border: 0px;
 }

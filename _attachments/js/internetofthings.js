@@ -17,7 +17,27 @@
           center: latlng,
           mapTypeId: google.maps.MapTypeId.ROADMAP
         };
+
         var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+
+        var getCartIcons = function (lat,lon,count) {
+          var one_block = 0.0012;
+          var dataset = 'bicycle_parking_pdx';
+          $.couch.app(function(app) {
+            /*app.db.view('webapp/points', {success: function(cart_results) {
+            }});*/
+          }, {db : "food_carts", design : "webapp"});
+        }
+
+        var updateCartIcons =  function (){
+                 var center = map.getCenter();
+                 getCartIcons(center.lat(), center.lng(), 10);
+        };
+
+        google.maps.event.addListener(map, "dragend",  updateCartIcons);
+
+        updateCartIcons();
+
       });
     });
     
