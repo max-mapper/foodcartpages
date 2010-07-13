@@ -56,8 +56,7 @@
       $.couch.app(function(app) {
         app.db.openDoc(id, {success: function(cart_doc) {
           context.partial('cartedit.template', {cart: cart_doc}, function(rendered) {
-            context.$element().html(rendered);
-            var cartform = $('#cartform');
+            $('#'+id).replace(rendered);
             $('#cartform').submit(function() {
               app.db.saveDoc({
                                _id: cart_doc._id,
