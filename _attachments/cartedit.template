@@ -1,9 +1,9 @@
 <form id="cartform">
   <fieldset>
-    <div>
+    <h2>
     <label for="name">Name</label>
     <input id="name" value="<%= cart.name %>">
-    </div>
+    </h2>
     <div>
     <label for="name">Hours</label>
     <input id="hours" value="<%= cart.hours %>">

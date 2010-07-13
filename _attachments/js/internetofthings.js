@@ -30,7 +30,7 @@
                                           $('#cartcount').html(cart_results.total_rows+" food carts listed.");
                                           $.each(cart_results.rows, function(index,element) {
                                             var carts_element = $('#carts ul#carts');
-                                            context.partial('cart.template', {cart: element}, function(rendered) {
+                                            context.partial('cart.template', {cart: element.value}, function(rendered) {
                                                carts_element.append(rendered);
                                             });
                                           });
@@ -43,7 +43,7 @@
       $.couch.app(function(app) {
         app.db.saveDoc({}, {success: function(res) {
           var carts_element = $('#carts ul#carts');
-          context.partial('cart.template', {cart: {id: res.id, rev: res.rev, value: {geometry:{coordinates:[0,0]}}}}, function(rendered) {
+          context.partial('cart.template', {cart: {_id: res.id, _rev: res.rev, geometry:{coordinates:[0,0]}}}, function(rendered) {
              carts_element.append(rendered);
           });
           window.location = "#/carts/edit/"+res.id;
@@ -58,15 +58,16 @@
           context.partial('cartedit.template', {cart: cart_doc}, function(rendered) {
             $('#'+id).replace(rendered);
             $('#cartform').submit(function() {
-              app.db.saveDoc({
-                               _id: cart_doc._id,
+              var newCart = {  _id: cart_doc._id,
                                _rev: cart_doc._rev,
                                name: $('#cartform #name').val(), 
                                hours: $('#cartform #hours').val(), 
                                description: $('#cartform #description').val(), 
-                               geometry: {coordinates: [0,0],"type":"Point"}
-                             }, {success: function(res) {
-                                  window.location = "#/carts";
+                               geometry: {coordinates: [0,0],"type":"Point"}};
+              app.db.saveDoc(newCart, {success: function(res) {
+                                    context.partial('cart.template', {cart: newCart}, function(rendered) {
+                                      $('#'+id).replace(rendered);
+                                    });
               }});
               return false;
             });
