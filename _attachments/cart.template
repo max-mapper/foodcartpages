@@ -1,21 +1,11 @@
-<li>
-  <div id="<%= cart._id %>" class="cart rounded">
-    <div class="map right">
-      <img class='map_image' src='http://maps.google.com/maps/api/staticmap?center=<%= cart.geometry.coordinates[1] %>,<%= cart.geometry.coordinates[0] %>&zoom=14&size=250x130&markers=color:blue|<%= cart.geometry.coordinates[1] %>,<%= cart.geometry.coordinates[0] %>&sensor=false'>
-      <div id="controls">
-        <a href="#/carts/edit/<%=cart._id%>"><img src="images/edit.png"></a>
-      </div>
-    </div>
-
-    <div class="profile left">
+<div id="<%= cart._id %>" class="cart rounded">
+  <h2><%= cart.name %></h2>
+  <h3>Hours:</h3><span><%= cart.hours %></span>
+  <h3>Description:</h3><span><%= cart.description %></span>
+  <div class="profile left">
+    <a href='http://pdxapi.com/image/food_carts/<%= cart._id %>'>
       <img src='/food_carts/<%= cart._id %>/menuphoto' shouldbe='<%= cart.profile_image %>'>
-    </div>
-
-    <h2> <a ><%= cart.name %></a> </h2>
-    <ul>
-      <li>Hours: <%= cart.hours %></li>
-      <li>Description: <%= cart.description %></li>
-    </ul>
+    </a>
   </div>
-  <br clear="all">
-</li>
+</div>
+<br clear="all">

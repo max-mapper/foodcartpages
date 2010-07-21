@@ -1,148 +1,24 @@
-#head {
-  /*background: #830000;*/
-  background: #0c2627;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 20px;
-  padding-top: 15px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 15px;
+#map_canvas {
+  position: absolute;
+  top: 0px;
+  right: 0px;
 }
 
-#logoarea {
-  width: 35%;
-  height: 116px;
+#autocomplete {
+  width: 480px;
+  height: 30px;
+  font-size:18px;
+  padding-left:5px;
 }
 
-#logologo {
-  width: 170px;
+#inner_content {
+  padding: 10px 0px;
 }
 
-#logotext {
-  background: white;
-  font-size: 180%;
-  font-weight: bold;
-  color: green;
-  height: 116px;
+.profile img {
+  max-height: 200px;
 }
 
-#headrighthalf {
-  width: 45%;
-}
-
-#searchbox {
-  padding: 10px;
-  background: white;
-}
-
-#searchbox .submit {
-}
-
-#searchbox #searchtitle {
-  font-size: 70%;
-  font-weight: bold;
-}
-
-#backing {
-  background: #0c2627;
-  width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#menubuttons {
-  background: white
-}
-
-#menubuttons ul {
-  list-style: none;
-}
-
-#menubuttons ul li {
-  display: inline;
-  font-size: 140%;
-  margin: 8px;
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-}
-
-#menubuttons ul li a {
-  color: green;
-}
-
-#menubuttons ul li a:hover {
-  background: #dddddd;
-}
-
-
-#cartcount {
-  background: white;
-  text-align: center;
-}
-
-#cartsmenu {
-  background: white;
-  text-align: center;
-}
-
-#carts ul {
-  list-style: none;
-}
-.cart {
-  background: white;
-  margin: 5px;
-  height: 170px;
-}
-
-.cart .profile img {
-  margin: 5px;
-  height: 160px;
-}
-
-.cart #controls {
-}
-
-.map {
-  margin: 5px;
-}
-
-#map_image {
-  margin: 5px;
-  height: 130px;
-}
-
-#content {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background: grey;
-}
-
-#credits {
-  background: white;
-}
-
-.rounded {
-  -moz-border-radius: 5px;
-  -webkit-border-radius: 5px;
-}
-
-.right {
-  float: right;
-}
-.left {
-  float: left;
-}
-
-.centered {
-  text-align: center;
-}
-
-img {
-  border: 0px;
+.profile{
+  padding-top: 20px;
 }
