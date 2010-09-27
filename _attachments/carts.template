@@ -1,8 +1,0 @@
-<div id="carts" class="rounded">
-  <div id="cartcount"></div>
-  <ul id="carts">
-  </ul>
-  <div id="cartsmenu">
-    <a href="#/carts/new">New Cart</a>
-  </div>
-</div>
