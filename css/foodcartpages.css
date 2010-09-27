@@ -1,24 +1,28 @@
+/* line 1, ../sass/foodcartpages.sass */
 #map_canvas {
   position: absolute;
   top: 0px;
   right: 0px;
 }
 
+/* line 6, ../sass/foodcartpages.sass */
 #autocomplete {
   width: 480px;
   height: 30px;
-  font-size:18px;
-  padding-left:5px;
+  font-size: 18px;
+  padding-left: 5px;
 }
 
+/* line 12, ../sass/foodcartpages.sass */
 #inner_content {
   padding: 10px 0px;
 }
 
+/* line 15, ../sass/foodcartpages.sass */
+.profile {
+  padding-top: 20px;
+}
+/* line 16, ../sass/foodcartpages.sass */
 .profile img {
   max-height: 200px;
-}
-
-.profile{
-  padding-top: 20px;
 }
