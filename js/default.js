@@ -12222,11 +12222,31 @@ $.fn.selection = function(start, end) {
 
     var showLoading = function() {
       $('#loading').show();
-    };
+    }
 
     var hideLoading = function() {
       $('#loading').hide();
-    };
+    }
+    
+    var bindAutocomplete = function(items) {      
+      $("#autocomplete").autocomplete(items, {
+        matchContains: true,
+        formatItem: function(row, i, max) {
+          return row.key;
+        },
+        formatMatch: function(row, i, max) {
+          return row.key;
+        },
+        formatResult: function(row) {
+          return row.key;
+        }
+      })
+      
+      $("#autocomplete").result(function(event, data, formatted) {
+        console.log('you selected!')
+        $('#autocomplete').val('').blur().focus();
+      })
+    }
 
     this.bind('run', function() {
       showLoading();
@@ -12239,10 +12259,10 @@ $.fn.selection = function(start, end) {
       showLoading();
       this.load($('#templates .carts-map'))
           .replace('#right_content')
-          .send(Carts.viewDocs, 'all', {
-            descending: true
-          })
           .then(Carts.createMap)
+          .send(Carts.view, 'all', { descending: true }, function(data){
+            bindAutocomplete(data.rows)
+          })
           .then(hideLoading);
     });
 
