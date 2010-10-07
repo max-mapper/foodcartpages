@@ -20,10 +20,7 @@ Carts.extend({
     Carts.map.setMapType(G_AERIAL_MAP);
     var portlandOR = new GLatLng(45.525571246250465, -122.66827583312988);
     Carts.map.setCenter(portlandOR, 15);
-    GEvent.addListener(Carts.map, "moveend", function(){
-      var center = Carts.map.getCenter();
-      Carts.getFoodCarts(center.lat(), center.lng());
-    });
+    Carts.getFoodCarts();
   },
 
   showCart: function(cart_info) {
@@ -32,13 +29,12 @@ Carts.extend({
     map.addOverlay(marker);
     map.setZoom(19);
     map.panTo(point);
-    window.location = "#/cart/" + cart_info._id;
+    app.setLocation("#/cart/" + cart_info._id);
   },
 
-  getFoodCarts: function(lat, lon) {
-    var one_block = 0.0012;
+  getFoodCarts: function() {
     $.ajax({
-      url: "http://data.pdxapi.com:5984/food_carts/_design/names/_spatial/points?bbox="+ (lon - one_block) + "," + (lat - one_block) + "," + (lon + one_block) + "," + (lat + one_block),        
+      url: "http://maxogden.couchone.com/food_carts/_design/names/_spatial/points?bbox=-180,180,-90,90",
       dataType: 'jsonp',
       success: function(response) {
         $.each(Carts.nearby, function(i, cart) {
@@ -72,7 +68,6 @@ Carts.extend({
       }
     });
     $("#autocomplete").result(function(event, data, formatted) {
-      console.log('you selected an item!');
       $('#autocomplete').val('').blur().focus();
     });
   },

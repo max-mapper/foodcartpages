@@ -4,7 +4,7 @@
         .use('Mustache')
         .use('Storage')
         .use('NestedParams')
-        .use('Couch');
+        .use('Couch', 'food_carts');
 
     var showLoading = function() {
       $('#loading').show();
@@ -29,7 +29,6 @@
       })
       
       $("#autocomplete").result(function(event, data, formatted) {
-        console.log('you selected!')
         $('#autocomplete').val('').blur().focus();
       })
     }
@@ -50,6 +49,12 @@
             bindAutocomplete(data.rows)
           })
           .then(hideLoading);
+    });
+    
+    this.get('#/cart/:cartid', function(ctx) {
+      this.send(Carts.get, this.params['cartid'])
+        .render($('#cart-template'))
+        .replace('#inner_content');
     });
 
     // this.post('#/action', function(ctx) {

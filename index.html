@@ -13,8 +13,8 @@
   <title>Food Cart Pages</title>
 
   <link rel="stylesheet" href="http://jashkenas.github.com/docco/resources/docco.css">
-  <link rel="stylesheet" href="css/jquery.autocomplete.css">
-  <link rel="stylesheet" href="css/foodcartpages.css">
+  <link rel="stylesheet" href="http://maxogden.couchone.com/food_carts/_design/food_carts/css/jquery.autocomplete.css">
+  <link rel="stylesheet" href="http://maxogden.couchone.com/food_carts/_design/food_carts/css/foodcartpages.css">
 </head>
 <body class="bp">
   <div id='container'>
@@ -29,12 +29,9 @@
     <tbody>
       <tr id='section-1'>
         <td id='left_content' class='docs'>
-          <div class="octowrap">
-            <a class="octothorpe" href="#section-1">#</a>
-          </div>
           <p><strong>Food Cart Pages</strong> is a community built database of information about food carts and trucks in Portland, OR.</p>
           </div>
-          <input id="autocomplete" placeholder="Search for a cart..."/>
+          <!-- <input id="autocomplete" placeholder="Search for a cart..."/> -->
           <div id="inner_content" class="rounded"></div>
         </td>
         <td id="right_content">
@@ -47,7 +44,20 @@
     <div class="carts-map">
       <div id="map_canvas"></div>
     </div>
+    <script id="cart-template" type="text/mustache" data-engine="mustache">
+      <div id="{{_id}}" class="cart rounded">
+        <h2>{{name}}</h2>
+        <h3>Hours:</h3><span>{{hours}}</span>
+        <h3>Description:</h3><span>{{description}}</span>
+        <div class="profile left">
+          <a href='/food_carts/{{_id}}/menuphoto'>
+            <img src='/food_carts/{{_id}}/menuphoto' shouldbe='{{profile_image}}'>
+          </a>
+        </div>
+      </div>
+      <br clear="all">
+     </script>
   </div>
-  <script src="js/default.js" type="text/javascript" charset="utf-8"></script>
+  <script src="http://maxogden.couchone.com/food_carts/_design/food_carts/js/default.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>

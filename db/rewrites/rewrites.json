@@ -1,0 +1,18 @@
+[
+  {
+    "from" : "script/*",
+    "to" : "script/*"
+  },
+  {
+    "from" : "style/*",
+    "to" : "style/*"
+  },
+  {
+    "from" : "images/*",
+    "to" : "images/*"
+  },
+  {
+    "from" : "vendor/*",
+    "to" : "vendor/*"
+  }
+]
